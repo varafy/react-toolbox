@@ -1,0 +1,57 @@
+.avatar {
+  background-color: rgb(158, 158, 158);
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  font-size: 24px;
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 40px;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%
+}
+.avatar *,
+    .avatar *::after,
+    .avatar *::before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+    }
+.avatar > svg {
+    fill: currentColor;
+    height: 40px;
+    width: 1em;
+  }
+.avatar > img {
+    height: auto;
+    max-width: 100%;
+  }
+.image {
+  background-color: transparent;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.letter {
+  display: block;
+  line-height: 40px;
+  width: 100%;
+}

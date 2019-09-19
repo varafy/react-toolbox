@@ -1,0 +1,50 @@
+.icon {
+  font-size: 18px;
+  margin-right: 10px;
+}
+.link {
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  line-height: 1.5;
+  position: relative;
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%
+}
+.link *,
+    .link *::after,
+    .link *::before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+    }
+.link:not(.active) {
+    opacity: 0.5;
+  }
+.link:hover,
+  .link:active {
+    opacity: 1;
+  }
+.link > * {
+    vertical-align: middle;
+  }
+.link > small {
+    font-size: 12px;
+    margin-left: 8px;
+    text-align: center;
+  }

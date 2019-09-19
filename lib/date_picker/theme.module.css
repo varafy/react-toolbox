@@ -1,0 +1,214 @@
+.input:not(.disabled) > .inputElement {
+  cursor: pointer;
+}
+.header {
+  background-color: rgb(63, 81, 181);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  padding: 16px 20px;
+}
+.year {
+  display: inline-block;
+  font-size: 14px;
+  transition: opacity, font-size 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.date {
+  display: block;
+  font-size: 34px;
+  font-weight: 400;
+  font-weight: 500;
+  line-height: 40px;
+  margin: 0;
+  text-transform: capitalize;
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.calendarWrapper {
+  padding: 10px 5px 0;
+}
+.yearsDisplay .date {
+    opacity: 0.6;
+  }
+.yearsDisplay .year {
+    font-size: 16px;
+  }
+.monthsDisplay .year {
+    opacity: 0.6;
+  }
+.dialog {
+  width: 330px
+}
+.dialog > [role='body'] {
+    padding: 0;
+  }
+.dialog > [role='navigation'] > .button {
+    color: rgb(63, 81, 181)
+  }
+.dialog > [role='navigation'] > .button:hover {
+      background: rgba(63, 81, 181, 0.2);
+    }
+.dialog > [role='navigation'] > .button:focus:not(:active) {
+      background: rgba(63, 81, 181, 0.2);
+    }
+.week {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 13px;
+  height: 36px;
+  line-height: 36px;
+  opacity: 0.5
+}
+.week > span {
+    flex: 0 0 14.28571%;
+  }
+.calendar {
+  background: rgb(255, 255, 255);
+  font-size: 14px;
+  height: 312px;
+  line-height: 36px;
+  overflow: hidden;
+  position: relative;
+  text-align: center
+}
+.calendar .prev,
+  .calendar .next {
+    cursor: pointer;
+    height: 36px;
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    z-index: 100
+  }
+.calendar .prev > span, .calendar .next > span {
+      vertical-align: top;
+    }
+.calendar .prev {
+    left: 0;
+  }
+.calendar .next {
+    right: 0;
+  }
+.day {
+  flex: 0 0 14.28571%;
+  padding: 2px 0
+
+  /* stylelint-disable */
+}
+.day > span {
+    border-radius: 50%;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    width: 36px;
+  }
+.day {
+  /* stylelint-enable */
+}
+.day.active > span {
+    background: rgb(63, 81, 181);
+    color: rgb(255, 255, 255);
+  }
+.day:hover:not(.disabled) > span {
+    cursor: pointer;
+  }
+.day:hover:not(.active):not(.disabled) > span {
+    background: rgba(63, 81, 181, 0.21);
+    color: rgb(255, 255, 255);
+  }
+.day.disabled {
+    opacity: 0.25;
+  }
+.title {
+  display: inline-block;
+  font-weight: 500;
+  line-height: 36px;
+}
+.years {
+  font-size: 18px;
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  overflow-y: auto;
+  padding: 0
+}
+.years > li {
+    cursor: pointer;
+    line-height: 2.4
+  }
+.years > li.active {
+      color: rgb(63, 81, 181);
+      font-size: 2.4;
+      font-weight: 500;
+    }
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+.month {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+}
+.slideRightEnter,
+.slideRightExit {
+  position: absolute;
+}
+.slideRightEnterActive,
+.slideRightExitActive {
+  transition-duration: 350ms;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  transition-timing-function: ease-in-out;
+}
+.slideRightEnter {
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%)
+}
+.slideRightEnter.slideRightEnterActive {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+.slideRightExit {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0)
+}
+.slideRightExit.slideRightExitActive {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+.slideLeftEnter,
+.slideLeftExit {
+  position: absolute;
+}
+.slideLeftEnterActive,
+.slideLeftExitActive {
+  transition-duration: 350ms;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  transition-timing-function: ease-in-out;
+}
+.slideLeftEnter {
+  opacity: 0;
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0)
+}
+.slideLeftEnter.slideLeftEnterActive {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+.slideLeftExit {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0)
+}
+.slideLeftExit.slideLeftExitActive {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }

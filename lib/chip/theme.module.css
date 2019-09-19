@@ -1,0 +1,74 @@
+.chip {
+  background-color: rgb(238, 238, 238);
+  border-radius: 32px;
+  color: rgb(117, 117, 117);
+  display: inline-block;
+  font-size: 14px;
+  line-height: 32px;
+  margin-right: 2.5px;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 12px;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+}
+.chip *,
+    .chip *::after,
+    .chip *::before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+    }
+.avatar {
+  padding-left: 0
+}
+.avatar > [data-react-toolbox='avatar'] {
+    height: 32px;
+    margin-right: 8px;
+    vertical-align: middle;
+    width: 32px
+  }
+.avatar > [data-react-toolbox='avatar'] > span {
+      font-size: 20px;
+      line-height: 32px;
+    }
+.deletable {
+  padding-right: 32px;
+}
+.delete {
+  cursor: pointer;
+  display: inline-block;
+  height: 24px;
+  margin: 4px;
+  padding: 4px;
+  position: absolute;
+  right: 0;
+  width: 24px;
+}
+.deleteIcon {
+  background: rgb(189, 189, 189);
+  border-radius: 24px;
+  vertical-align: top
+}
+.deleteIcon .deleteX {
+    fill: transparent;
+    stroke: rgb(255, 255, 255);
+    stroke-width: 4px;
+  }
+.delete:hover .deleteIcon {
+  background: rgb(158, 158, 158);
+}

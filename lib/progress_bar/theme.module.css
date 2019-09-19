@@ -1,0 +1,202 @@
+.value {
+  background-color: rgb(63, 81, 181);
+}
+.value,
+.buffer {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  transition-duration: 0.35s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.linear {
+  background: rgb(238, 238, 238);
+  display: inline-block;
+  height: 4px;
+  overflow: hidden;
+  position: relative;
+  width: 100%
+}
+.linear.indeterminate .value {
+    -webkit-animation: linear-indeterminate-bar 1s linear infinite;
+            animation: linear-indeterminate-bar 1s linear infinite;
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+  }
+.buffer {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+    linear-gradient(to right, rgb(63, 81, 181), rgb(63, 81, 181));
+}
+.circle {
+  height: 100%;
+  width: 100%;
+}
+.path {
+  fill: none;
+  stroke: rgb(63, 81, 181);
+  stroke-dasharray: 0, 250;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  stroke-miterlimit: 20;
+  stroke-width: 4;
+  transition: stroke-dasharray 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.circular {
+  display: inline-block;
+  height: 60px;
+  position: relative;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  width: 60px
+}
+.circular.indeterminate .circle {
+      -webkit-animation: circular-indeterminate-bar-rotate 2s linear infinite;
+              animation: circular-indeterminate-bar-rotate 2s linear infinite;
+    }
+.circular.indeterminate .path {
+      -webkit-animation: circular-indeterminate-bar-dash 1.5s ease-in-out infinite;
+              animation: circular-indeterminate-bar-dash 1.5s ease-in-out infinite;
+      stroke-dasharray: 1.25, 250;
+      stroke-dashoffset: 0;
+    }
+.circular.indeterminate.multicolor .path {
+        -webkit-animation:
+          circular-indeterminate-bar-dash 1.5s ease-in-out infinite,
+          colors 6s ease-in-out infinite;
+                animation:
+          circular-indeterminate-bar-dash 1.5s ease-in-out infinite,
+          colors 6s ease-in-out infinite;
+      }
+.circular[disabled] .value, .linear[disabled] .value {
+    background-color: rgba(0, 0, 0, 0.26);
+  }
+.circular[disabled] .buffer, .linear[disabled] .buffer {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+      linear-gradient(to right, rgba(0, 0, 0, 0.26), rgba(0, 0, 0, 0.26));
+  }
+@-webkit-keyframes linear-indeterminate-bar {
+  0% {
+    -webkit-transform: translate(-50%) scaleX(0);
+            transform: translate(-50%) scaleX(0);
+  }
+
+  50% {
+    -webkit-transform: translate(-0%) scaleX(0.3);
+            transform: translate(-0%) scaleX(0.3);
+  }
+
+  100% {
+    -webkit-transform: translate(50%) scaleX(0);
+            transform: translate(50%) scaleX(0);
+  }
+}
+@keyframes linear-indeterminate-bar {
+  0% {
+    -webkit-transform: translate(-50%) scaleX(0);
+            transform: translate(-50%) scaleX(0);
+  }
+
+  50% {
+    -webkit-transform: translate(-0%) scaleX(0.3);
+            transform: translate(-0%) scaleX(0.3);
+  }
+
+  100% {
+    -webkit-transform: translate(50%) scaleX(0);
+            transform: translate(50%) scaleX(0);
+  }
+}
+@-webkit-keyframes circular-indeterminate-bar-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes circular-indeterminate-bar-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes circular-indeterminate-bar-dash {
+  0% {
+    stroke-dasharray: 1.25, 250;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 111.25, 250;
+    stroke-dashoffset: -43.75;
+  }
+
+  100% {
+    stroke-dasharray: 111.25, 250;
+    stroke-dashoffset: -155;
+  }
+}
+@keyframes circular-indeterminate-bar-dash {
+  0% {
+    stroke-dasharray: 1.25, 250;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 111.25, 250;
+    stroke-dashoffset: -43.75;
+  }
+
+  100% {
+    stroke-dasharray: 111.25, 250;
+    stroke-dashoffset: -155;
+  }
+}
+@-webkit-keyframes colors {
+  0% {
+    stroke: #4285f4;
+  }
+
+  25% {
+    stroke: #de3e35;
+  }
+
+  50% {
+    stroke: #f7c223;
+  }
+
+  75% {
+    stroke: #1b9a59;
+  }
+
+  100% {
+    stroke: #4285f4;
+  }
+}
+@keyframes colors {
+  0% {
+    stroke: #4285f4;
+  }
+
+  25% {
+    stroke: #de3e35;
+  }
+
+  50% {
+    stroke: #f7c223;
+  }
+
+  75% {
+    stroke: #1b9a59;
+  }
+
+  100% {
+    stroke: #4285f4;
+  }
+}

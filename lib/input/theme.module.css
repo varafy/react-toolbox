@@ -1,0 +1,170 @@
+.input {
+  padding: 20px 0;
+  position: relative;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%
+}
+.input *,
+    .input *::after,
+    .input *::before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+    }
+.input.withIcon {
+    margin-left: 68px;
+  }
+.icon {
+  color: rgba(33, 33, 33, 0.26);
+  display: block;
+  font-size: 24px !important;
+  height: 48px;
+  left: -68px;
+  line-height: 48px !important;
+  position: absolute;
+  text-align: center;
+  top: 16px;
+  transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 48px;
+}
+.counter {
+  color: rgba(33, 33, 33, 0.26);
+  position: absolute;
+  right: 0;
+}
+.counter,
+.error {
+  color: rgb(222, 50, 38);
+  font-size: 12px;
+  line-height: 20px;
+  margin-bottom: -20px;
+}
+.hint {
+  color: rgba(33, 33, 33, 0.26);
+  font-size: 16px;
+  left: 0;
+  line-height: 16px;
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  top: 32px;
+  transition-duration: 0.35s;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.label {
+  color: rgba(33, 33, 33, 0.26);
+  font-size: 16px;
+  left: 0;
+  line-height: 16px;
+  pointer-events: none;
+  position: absolute;
+  top: 32px;
+  transition-duration: 0.35s;
+  transition-property: top, font-size, color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+}
+.label.fixed ~ .hint {
+    display: none;
+  }
+.bar {
+  display: block;
+  position: relative;
+  width: 100%
+}
+.bar::before,
+  .bar::after {
+    background-color: rgb(63, 81, 181);
+    bottom: 0;
+    content: '';
+    height: 2px;
+    position: absolute;
+    transition-duration: 0.2s;
+    transition-property: width, background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    width: 0;
+  }
+.bar::before {
+    left: 50%;
+  }
+.bar::after {
+    right: 50%;
+  }
+.hidden {
+  display: none;
+}
+.errored {
+  padding-bottom: 0
+}
+.errored > .inputElement {
+    border-bottom-color: rgb(222, 50, 38);
+    margin-top: 1px;
+  }
+.errored > .counter,
+  .errored > .label {
+    color: rgb(222, 50, 38);
+  }
+.errored > .label > .required {
+    color: rgb(222, 50, 38);
+  }
+.disabled > .inputElement {
+  border-bottom-style: dashed;
+  color: rgba(33, 33, 33, 0.26);
+}
+/* stylelint-disable */
+.inputElement {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.12);
+  border-left: 0;
+  border-radius: 0;
+  border-right: 0;
+  border-top: 0;
+  color: rgb(33, 33, 33);
+  display: block;
+  font-size: 16px;
+  outline: none;
+  padding: 8px 0;
+  width: 100%
+}
+.inputElement:required {
+    box-shadow: none;
+  }
+.inputElement.filled ~ .hint,
+  .inputElement.filled ~ .label.fixed {
+    display: none;
+  }
+.inputElement.filled ~ .label:not(.fixed), .inputElement[type='date'] ~ .label:not(.fixed), .inputElement[type='time'] ~ .label:not(.fixed), .inputElement:focus:not([disabled]):not([readonly]) ~ .label:not(.fixed) {
+      font-size: 12px;
+      top: 6px;
+    }
+.inputElement:focus:not([disabled]):not([readonly]) ~ .bar::before,
+    .inputElement:focus:not([disabled]):not([readonly]) ~ .bar::after {
+      width: 50%;
+    }
+.inputElement:focus:not([disabled]):not([readonly]) ~ .label:not(.fixed) {
+      color: rgb(63, 81, 181);
+    }
+.inputElement:focus:not([disabled]):not([readonly]) ~ .label > .required {
+      color: rgb(222, 50, 38);
+    }
+.inputElement:focus:not([disabled]):not([readonly]) ~ .hint {
+      display: block;
+      opacity: 1;
+    }
+.inputElement:focus:not([disabled]):not([readonly]) ~ .icon {
+      color: rgb(63, 81, 181);
+    }
+.inputElement:focus:not([disabled]):not([readonly]).filled ~ .hint {
+      opacity: 0;
+    }

@@ -1,0 +1,74 @@
+.tooltip {
+  display: block;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 14px;
+  max-width: 170px;
+  padding: 5px;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  text-transform: none;
+  -webkit-transform: scale(0) translateX(-50%);
+          transform: scale(0) translateX(-50%);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 200ms transform;
+  z-index: 200;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%
+}
+.tooltip *,
+    .tooltip *::after,
+    .tooltip *::before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+    }
+.tooltip.tooltipActive {
+    -webkit-transform: scale(1) translateX(-50%);
+            transform: scale(1) translateX(-50%);
+  }
+.tooltip.tooltipTop {
+    -webkit-transform: scale(0) translateX(-50%) translateY(-100%);
+            transform: scale(0) translateX(-50%) translateY(-100%)
+  }
+.tooltip.tooltipTop.tooltipActive {
+      -webkit-transform: scale(1) translateX(-50%) translateY(-100%);
+              transform: scale(1) translateX(-50%) translateY(-100%);
+    }
+.tooltip.tooltipLeft {
+    -webkit-transform: scale(0) translateX(-100%) translateY(-50%);
+            transform: scale(0) translateX(-100%) translateY(-50%)
+  }
+.tooltip.tooltipLeft.tooltipActive {
+      -webkit-transform: scale(1) translateX(-100%) translateY(-50%);
+              transform: scale(1) translateX(-100%) translateY(-50%);
+    }
+.tooltip.tooltipRight {
+    -webkit-transform: scale(0) translateX(0) translateY(-50%);
+            transform: scale(0) translateX(0) translateY(-50%)
+  }
+.tooltip.tooltipRight.tooltipActive {
+      -webkit-transform: scale(1) translateX(0) translateY(-50%);
+              transform: scale(1) translateX(0) translateY(-50%);
+    }
+.tooltipInner {
+  background: rgba(97, 97, 97, 0.9);
+  border-radius: 2px;
+  color: rgb(255, 255, 255);
+  display: block;
+  padding: 8px;
+}

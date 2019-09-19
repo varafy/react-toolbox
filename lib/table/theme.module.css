@@ -1,0 +1,99 @@
+.table {
+  background-color: rgb(255, 255, 255);
+  border-collapse: collapse;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+}
+.table *,
+    .table *::after,
+    .table *::before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+    }
+.head {
+  padding-bottom: 3px;
+  white-space: nowrap;
+}
+.row {
+  color: rgba(0, 0, 0, 0.87);
+  height: 48px;
+  transition-duration: 0.28s;
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+}
+.row.selected { background-color: #f5f5f5; }
+.row:hover,
+  .row.selected:hover { background-color: #eee; }
+.rowCell {
+  border-bottom: 1px solid #e6e6e6;
+  border-top: 1px solid #e6e6e6;
+  height: 48px;
+  padding-top: 12px;
+  vertical-align: middle
+}
+.rowCell.checkboxCell {
+    padding-right: 5px;
+    width: 18px
+  }
+.rowCell.checkboxCell > * {
+      margin: 0;
+    }
+.sortIcon {
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 3px;
+  transition: 0.28s -webkit-transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 0.28s transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 0.28s transform cubic-bezier(0.4, 0, 0.2, 1), 0.28s -webkit-transform cubic-bezier(0.4, 0, 0.2, 1);
+  vertical-align: sub
+}
+.sortIcon.asc {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+.headCell {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 12px;
+  font-weight: 500;
+  height: 48px;
+  line-height: 24px;
+  padding-bottom: 8px;
+  text-overflow: ellipsis;
+  vertical-align: bottom
+}
+.headCell.checkboxCell {
+    padding-right: 5px;
+    width: 18px
+  }
+.headCell.checkboxCell > * {
+      margin: 0 0 3px;
+    }
+.headCell.sorted {
+    color: rgba(0, 0, 0, 0.87);
+    cursor: pointer
+  }
+.headCell.sorted:hover .sortIcon {
+      color: rgba(0, 0, 0, 0.26);
+    }
+.rowCell,
+.headCell {
+  padding: 12px 18px;
+  text-align: left
+}
+.rowCell:first-of-type, .headCell:first-of-type { padding-left: 24px; }
+.rowCell:last-of-type, .headCell:last-of-type { padding-right: 24px; }
+.rowCell.numeric, .headCell.numeric { text-align: right; }

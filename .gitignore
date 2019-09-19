@@ -17,7 +17,6 @@ pids
 build
 dist
 out
-lib
 
 # Dependency directories
 node_modules/

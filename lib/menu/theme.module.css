@@ -1,0 +1,180 @@
+.iconMenu {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%
+}
+.iconMenu *,
+    .iconMenu *::after,
+    .iconMenu *::before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+    }
+.iconMenu .icon {
+    cursor: pointer;
+  }
+.outline {
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  display: block;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.menuInner {
+  display: block;
+  list-style: none;
+  padding: 8px 0;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+}
+.menu {
+  display: inline-block;
+  position: relative
+}
+.menu.topLeft {
+    left: 0;
+    position: absolute;
+    top: 0
+  }
+.menu.topLeft > .outline {
+      -webkit-transform-origin: 0 0;
+              transform-origin: 0 0;
+    }
+.menu.topRight {
+    position: absolute;
+    right: 0;
+    top: 0
+  }
+.menu.topRight > .outline {
+      -webkit-transform-origin: 100% 0;
+              transform-origin: 100% 0;
+    }
+.menu.bottomLeft {
+    bottom: 0;
+    left: 0;
+    position: absolute
+  }
+.menu.bottomLeft > .outline {
+      -webkit-transform-origin: 0 100%;
+              transform-origin: 0 100%;
+    }
+.menu.bottomRight {
+    bottom: 0;
+    position: absolute;
+    right: 0
+  }
+.menu.bottomRight > .outline {
+      -webkit-transform-origin: 100% 100%;
+              transform-origin: 100% 100%;
+    }
+.menu:not(.static) {
+    pointer-events: none;
+    z-index: 200
+  }
+.menu:not(.static) > .outline {
+      opacity: 0;
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      transition:
+        opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition:
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition:
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+.menu:not(.static) > .menuInner {
+      left: 0;
+      margin: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+    }
+.menu:not(.static).active {
+      pointer-events: all
+    }
+.menu:not(.static).active > .outline {
+        opacity: 1;
+        -webkit-transform: scale(1);
+                transform: scale(1);
+      }
+.menu:not(.static).active > .menuInner {
+        opacity: 1;
+        transition:
+          opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+          clip 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+.menu:not(.static).rippled:not(.active) > .outline {
+        transition-delay: 0.3s;
+      }
+.menu:not(.static).rippled:not(.active) > .menuInner {
+        transition-delay: 0.3s;
+      }
+.menuItem {
+  align-items: center;
+  color: rgb(33, 33, 33);
+  display: flex;
+  font-size: 16px;
+  height: 48px;
+  overflow: hidden;
+  padding: 0 16px;
+  position: relative
+}
+.menuItem:not(.disabled):hover {
+    background-color: rgb(238, 238, 238);
+    cursor: pointer;
+  }
+.menuItem.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+.menuItem.selected {
+    background-color: transparent;
+    font-weight: 500;
+  }
+.menuItem .ripple {
+    color: rgb(117, 117, 117);
+  }
+.menuItem .icon {
+    font-size: 24px;
+    width: 38.4px;
+  }
+.caption {
+  flex-grow: 1;
+  font-size: 16px;
+}
+.shortcut {
+  margin-left: 16px;
+}
+.menuDivider {
+  background-color: rgb(238, 238, 238);
+  border: 0;
+  display: block;
+  height: 1px;
+  margin: 12px 0;
+  outline: 0;
+  padding: 0;
+  width: 100%;
+}

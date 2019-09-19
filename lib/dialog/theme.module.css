@@ -1,0 +1,129 @@
+/* Orientation */
+/* Devices (defined by max width) */
+/* Devices (defined by min-width) */
+.wrapper {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 200;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+}
+.wrapper *,
+    .wrapper *::after,
+    .wrapper *::before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+    }
+.dialog {
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+  box-shadow: 0 19px 60px rgba(0, 0, 0, 0.3), 0 15px 20px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  max-width: 96vw;
+  opacity: 0;
+  overflow: inherit;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  transition:
+    opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.07s
+}
+.dialog.active {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+.small {
+  width: 30vw
+}
+@media screen and (max-width: 720px) {
+.small {
+    width: 50vw
+}
+  }
+@media screen and (max-width: 600px) {
+.small {
+    width: 75vw
+}
+  }
+.normal {
+  width: 50vw
+}
+@media screen and (max-width: 600px) {
+.normal {
+    width: 96vw
+}
+  }
+.large {
+  width: 96vw;
+}
+.fullscreen {
+  width: 96vw
+}
+@media screen and (max-width: 600px) {
+.fullscreen {
+    border-radius: 0;
+    max-height: 100vh;
+    max-width: 100vw;
+    min-height: 100vh;
+    width: 100vw
+}
+  }
+.title {
+  color: rgb(0, 0, 0);
+  flex-grow: 0;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin: 0 0 16px;
+}
+.body {
+  color: rgb(117, 117, 117);
+  flex-grow: 2;
+  padding: 24px
+}
+.body p {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin: 0;
+  }
+.navigation {
+  flex-grow: 0;
+  padding: 8px;
+  text-align: right;
+}
+.button {
+  margin-left: 8px;
+  min-width: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+}

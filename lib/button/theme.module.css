@@ -1,0 +1,237 @@
+.button {
+  align-content: center;
+  align-items: center;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  flex-direction: row;
+  font-size: 14px;
+  font-weight: 500;
+  height: 36px;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: 36px;
+  outline: none;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1),
+    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%
+}
+.button *,
+    .button *::after,
+    .button *::before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+    }
+.button > input {
+    height: 0.1px;
+    margin: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 0.1px;
+    z-index: 0;
+  }
+.button::-moz-focus-inner {
+    border: 0;
+  }
+.button > span:not([data-react-toolbox='tooltip']) {
+    display: inline-block;
+    line-height: 36px;
+    vertical-align: middle;
+  }
+.button > svg {
+    display: inline-block;
+    fill: currentColor;
+    font-size: 120%;
+    height: 36px;
+    vertical-align: top;
+    width: 1em;
+  }
+.button > * {
+    pointer-events: none;
+  }
+.button > .rippleWrapper {
+    overflow: hidden;
+  }
+.button[disabled] {
+    color: rgba(0, 0, 0, 0.26);
+    cursor: auto;
+    pointer-events: none;
+  }
+.squared {
+  border-radius: 2px;
+  min-width: 90px;
+  padding: 0 12px
+}
+.squared .icon {
+    font-size: 120%;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+.squared > svg {
+    margin-right: 5px;
+  }
+.solid[disabled] {
+    background-color: rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+.solid:active {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+.solid:focus:not(:active) {
+    box-shadow:
+      0 0 8px rgba(0, 0, 0, 0.18),
+      0 8px 16px rgba(0, 0, 0, 0.36);
+  }
+.raised {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  composes: button;
+  composes: squared;
+  composes: solid;
+}
+.flat {
+  background: transparent;
+  composes: button;
+  composes: squared;
+}
+.toggle {
+  background: transparent;
+  border-radius: 50%;
+  composes: button;
+  vertical-align: middle;
+  width: 36px
+}
+.toggle > .icon,
+  .toggle svg {
+    font-size: 20px;
+    line-height: 36px;
+    vertical-align: top;
+  }
+.toggle > .rippleWrapper {
+    border-radius: 50%;
+  }
+.floating {
+  border-radius: 50%;
+  box-shadow:
+    0 1px 1.5px 0 rgba(0, 0, 0, 0.12),
+    0 1px 1px 0 rgba(0, 0, 0, 0.24);
+  composes: button;
+  composes: solid;
+  font-size: 24px;
+  height: 56px;
+  width: 56px
+}
+.floating .icon:not([data-react-toolbox='tooltip']) {
+    line-height: 56px;
+  }
+.floating > .rippleWrapper {
+    border-radius: 50%;
+  }
+.floating.mini {
+    font-size: 17.77778px;
+    height: 40px;
+    width: 40px
+  }
+.floating.mini .icon {
+      line-height: 40px;
+    }
+.primary:not([disabled]).raised,
+  .primary:not([disabled]).floating {
+    background: rgb(63, 81, 181);
+    color: rgb(255, 255, 255);
+  }
+.primary:not([disabled]).flat {
+    color: rgb(63, 81, 181)
+  }
+.primary:not([disabled]).flat:hover {
+      background: rgba(63, 81, 181, 0.2);
+    }
+.primary:not([disabled]).toggle {
+    color: rgb(63, 81, 181)
+  }
+.primary:not([disabled]).toggle:focus:not(:active) {
+      background: rgba(63, 81, 181, 0.2);
+    }
+.accent:not([disabled]).raised,
+  .accent:not([disabled]).floating {
+    background: rgb(255, 64, 129);
+    color: rgb(255, 255, 255);
+  }
+.accent:not([disabled]).flat {
+    color: rgb(255, 64, 129)
+  }
+.accent:not([disabled]).flat:hover {
+      background: rgba(255, 64, 129, 0.2);
+    }
+.accent:not([disabled]).toggle {
+    color: rgb(255, 64, 129)
+  }
+.accent:not([disabled]).toggle:focus:not(:active) {
+      background: rgba(255, 64, 129, 0.2);
+    }
+.neutral:not([disabled]).raised,
+  .neutral:not([disabled]).floating {
+    background-color: rgb(255, 255, 255);
+    color: rgb(33, 33, 33);
+  }
+.neutral:not([disabled]).flat {
+    color: rgb(33, 33, 33)
+  }
+.neutral:not([disabled]).flat:hover {
+      background: rgba(33, 33, 33, 0.2);
+    }
+.neutral:not([disabled]).toggle {
+    color: rgb(33, 33, 33)
+  }
+.neutral:not([disabled]).toggle:focus:not(:active) {
+      background: rgba(33, 33, 33, 0.2);
+    }
+.neutral:not([disabled]).inverse.raised,
+    .neutral:not([disabled]).inverse.floating {
+      background-color: rgb(33, 33, 33);
+      color: rgb(255, 255, 255);
+    }
+.neutral:not([disabled]).inverse.flat {
+      color: rgb(255, 255, 255)
+    }
+.neutral:not([disabled]).inverse.flat:hover {
+        background: rgba(33, 33, 33, 0.2);
+      }
+.neutral:not([disabled]).inverse.toggle {
+      color: rgb(255, 255, 255)
+    }
+.neutral:not([disabled]).inverse.toggle:focus:not(:active) {
+        background: rgba(33, 33, 33, 0.2);
+      }
+.neutral.inverse[disabled] {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.54);
+}

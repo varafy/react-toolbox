@@ -1,0 +1,64 @@
+.button {
+  margin:
+    -7px
+    -12px
+    -7px
+    48px;
+  min-width: inherit;
+}
+.snackbar {
+  align-items: center;
+  background-color: rgb(33, 33, 33);
+  border-radius: 2px;
+  bottom: 0;
+  color: rgb(255, 255, 255);
+  display: flex;
+  left: 24px;
+  margin: 14px auto 0;
+  padding: 14px 24px;
+  position: fixed;
+  right: 24px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0.35s;
+  z-index: 200;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%
+}
+.snackbar *,
+    .snackbar *::after,
+    .snackbar *::before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+    }
+.snackbar.accept .button {
+    color: rgb(76, 175, 80);
+  }
+.snackbar.warning .button {
+    color: rgb(238, 255, 65);
+  }
+.snackbar.cancel .button {
+    color: rgb(244, 67, 54);
+  }
+.snackbar:not(.active) {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+.snackbar.active {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+.label {
+  flex-grow: 1;
+  font-size: 14px;
+}

@@ -1,0 +1,695 @@
+/* Orientation */
+/* Devices (defined by max width) */
+/* Devices (defined by min-width) */
+.panel,
+.appbarInner {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.panel {
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0
+}
+.panel:not(.bodyScroll) {
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: scroll;
+  }
+.layout {
+  align-items: stretch;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  min-width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+}
+.layout *,
+    .layout *::after,
+    .layout *::before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+    }
+.sidebarDrawer,
+.navDrawerDrawer {
+  z-index: 100
+}
+.sidebarDrawer.pinned, .navDrawerDrawer.pinned {
+    box-shadow: none;
+  }
+.sidebarDrawer.clipped, .navDrawerDrawer.clipped {
+    height: calc(100vh - 64px);
+    padding-top: 5px;
+    top: 64px
+  }
+@media screen and (max-width: 480px) and (orientation: portrait) {
+.sidebarDrawer.clipped, .navDrawerDrawer.clipped {
+      height: calc(100vh - 56px);
+      top: 56px
+  }
+    }
+@media screen and (max-width: 600px) and (orientation: landscape) {
+.sidebarDrawer.clipped, .navDrawerDrawer.clipped {
+      height: calc(100vh - 48px);
+      top: 48px
+  }
+    }
+.navDrawerPinned .appbarLeftIcon {
+    display: none;
+  }
+.navDrawerPinned .panel {
+    left: 280px;
+  }
+.navDrawerPinned:not(.navDrawerClipped) .appbarAppBar {
+      padding-left: 304px;
+    }
+@media screen and (min-width: 600px) {
+    .navDrawerPinned .panel {
+      left: 320px;
+    }
+      .navDrawerPinned:not(.navDrawerClipped) .appbarAppBar {
+        padding-left: 344px;
+      }
+  }
+.sidebarPinned .appbarLeftIcon {
+    display: none;
+  }
+.sidebarPinned .panel {
+    right: 280px;
+  }
+.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+      padding-right: 304px;
+    }
+@media screen and (min-width: 600px) {
+    .sidebarPinned .panel {
+      right: 320px;
+    }
+      .sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 344px;
+      }
+  }
+.appbarFixed.appbarAppBar {
+    z-index: 100;
+  }
+.appbarFixed .panel {
+    height: calc(100vh - 64px);
+    max-height: calc(100vh - 64px);
+    top: 64px
+  }
+.appbarFixed .panel:not(.bodyScroll) {
+      overflow-y: scroll;
+    }
+@media screen and (max-width: 480px) and (orientation: portrait) {
+.appbarFixed .panel {
+      height: calc(100vh - 56px);
+      max-height: calc(100vh - 56px);
+      top: 56px
+  }
+    }
+@media screen and (max-width: 600px) and (orientation: landscape) {
+.appbarFixed .panel {
+      height: calc(100vh - 48px);
+      max-height: calc(100vh - 48px);
+      top: 48px
+  }
+    }
+.navDrawerClipped .navDrawerWrapper {
+    position: relative;
+    z-index: 1;
+  }
+.sidebarClipped .sidebarWrapper {
+    position: relative;
+    z-index: 1;
+  }
+.sidebarWidth1 .sidebarDrawer {
+      width: 100%;
+    }
+@media screen and (min-width: 840px) {
+      .sidebarWidth1 .sidebarDrawer {
+    width: 64px;
+  }
+    .sidebarWidth1.sidebarPinned .panel {
+      right: 64px;
+    }
+      .sidebarWidth1.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 88px;
+      }
+    }
+.sidebarWidth2 .sidebarDrawer {
+      width: 100%;
+    }
+@media screen and (min-width: 840px) {
+      .sidebarWidth2 .sidebarDrawer {
+    width: 128px;
+  }
+    .sidebarWidth2.sidebarPinned .panel {
+      right: 128px;
+    }
+      .sidebarWidth2.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 152px;
+      }
+    }
+.sidebarWidth3 .sidebarDrawer {
+      width: 100%;
+    }
+@media screen and (min-width: 840px) {
+      .sidebarWidth3 .sidebarDrawer {
+    width: 192px;
+  }
+    .sidebarWidth3.sidebarPinned .panel {
+      right: 192px;
+    }
+      .sidebarWidth3.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 216px;
+      }
+    }
+.sidebarWidth4 .sidebarDrawer {
+      width: 100%;
+    }
+@media screen and (min-width: 840px) {
+      .sidebarWidth4 .sidebarDrawer {
+    width: 256px;
+  }
+    .sidebarWidth4.sidebarPinned .panel {
+      right: 256px;
+    }
+      .sidebarWidth4.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 280px;
+      }
+    }
+.sidebarWidth5 .sidebarDrawer {
+      width: 100%;
+    }
+@media screen and (min-width: 840px) {
+      .sidebarWidth5 .sidebarDrawer {
+    width: 320px;
+  }
+    .sidebarWidth5.sidebarPinned .panel {
+      right: 320px;
+    }
+      .sidebarWidth5.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 344px;
+      }
+    }
+.sidebarWidth6 .sidebarDrawer {
+      width: 100%;
+    }
+@media screen and (min-width: 840px) {
+      .sidebarWidth6 .sidebarDrawer {
+    width: 384px;
+  }
+    .sidebarWidth6.sidebarPinned .panel {
+      right: 384px;
+    }
+      .sidebarWidth6.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 408px;
+      }
+    }
+.sidebarWidth7 .sidebarDrawer {
+      width: 100%;
+    }
+@media screen and (min-width: 840px) {
+      .sidebarWidth7 .sidebarDrawer {
+    width: 448px;
+  }
+    .sidebarWidth7.sidebarPinned .panel {
+      right: 448px;
+    }
+      .sidebarWidth7.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 472px;
+      }
+    }
+.sidebarWidth8 .sidebarDrawer {
+      width: 100%;
+    }
+@media screen and (min-width: 840px) {
+      .sidebarWidth8 .sidebarDrawer {
+    width: 512px;
+  }
+    .sidebarWidth8.sidebarPinned .panel {
+      right: 512px;
+    }
+      .sidebarWidth8.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 536px;
+      }
+    }
+.sidebarWidth9 .sidebarDrawer {
+      width: 100%;
+    }
+@media screen and (min-width: 840px) {
+      .sidebarWidth9 .sidebarDrawer {
+    width: 576px;
+  }
+    .sidebarWidth9.sidebarPinned .panel {
+      right: 576px;
+    }
+      .sidebarWidth9.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 600px;
+      }
+    }
+.sidebarWidth10 .sidebarDrawer {
+      width: 100%;
+    }
+@media screen and (min-width: 840px) {
+      .sidebarWidth10 .sidebarDrawer {
+    width: 640px;
+  }
+    .sidebarWidth10.sidebarPinned .panel {
+      right: 640px;
+    }
+      .sidebarWidth10.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 664px;
+      }
+    }
+.sidebarWidth11 .sidebarDrawer {
+      width: 100%;
+    }
+@media screen and (min-width: 840px) {
+      .sidebarWidth11 .sidebarDrawer {
+    width: 704px;
+  }
+    .sidebarWidth11.sidebarPinned .panel {
+      right: 704px;
+    }
+      .sidebarWidth11.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 728px;
+      }
+    }
+.sidebarWidth12 .sidebarDrawer {
+      width: 100%;
+    }
+@media screen and (min-width: 840px) {
+      .sidebarWidth12 .sidebarDrawer {
+    width: 768px;
+  }
+    .sidebarWidth12.sidebarPinned .panel {
+      right: 768px;
+    }
+      .sidebarWidth12.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 792px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: landscape) {
+      .sidebarWidth1 .sidebarDrawer {
+    width: 56px;
+  }
+    .sidebarWidth1.sidebarPinned .panel {
+      right: 56px;
+    }
+      .sidebarWidth1.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 80px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: portrait) {
+      .sidebarWidth1 .sidebarDrawer {
+    width: 64px;
+  }
+    .sidebarWidth1.sidebarPinned .panel {
+      right: 64px;
+    }
+      .sidebarWidth1.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 88px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: landscape) {
+      .sidebarWidth2 .sidebarDrawer {
+    width: 112px;
+  }
+    .sidebarWidth2.sidebarPinned .panel {
+      right: 112px;
+    }
+      .sidebarWidth2.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 136px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: portrait) {
+      .sidebarWidth2 .sidebarDrawer {
+    width: 128px;
+  }
+    .sidebarWidth2.sidebarPinned .panel {
+      right: 128px;
+    }
+      .sidebarWidth2.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 152px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: landscape) {
+      .sidebarWidth3 .sidebarDrawer {
+    width: 168px;
+  }
+    .sidebarWidth3.sidebarPinned .panel {
+      right: 168px;
+    }
+      .sidebarWidth3.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 192px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: portrait) {
+      .sidebarWidth3 .sidebarDrawer {
+    width: 192px;
+  }
+    .sidebarWidth3.sidebarPinned .panel {
+      right: 192px;
+    }
+      .sidebarWidth3.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 216px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: landscape) {
+      .sidebarWidth4 .sidebarDrawer {
+    width: 224px;
+  }
+    .sidebarWidth4.sidebarPinned .panel {
+      right: 224px;
+    }
+      .sidebarWidth4.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 248px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: portrait) {
+      .sidebarWidth4 .sidebarDrawer {
+    width: 256px;
+  }
+    .sidebarWidth4.sidebarPinned .panel {
+      right: 256px;
+    }
+      .sidebarWidth4.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 280px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: landscape) {
+      .sidebarWidth5 .sidebarDrawer {
+    width: 280px;
+  }
+    .sidebarWidth5.sidebarPinned .panel {
+      right: 280px;
+    }
+      .sidebarWidth5.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 304px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: portrait) {
+      .sidebarWidth5 .sidebarDrawer {
+    width: 320px;
+  }
+    .sidebarWidth5.sidebarPinned .panel {
+      right: 320px;
+    }
+      .sidebarWidth5.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 344px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: landscape) {
+      .sidebarWidth6 .sidebarDrawer {
+    width: 336px;
+  }
+    .sidebarWidth6.sidebarPinned .panel {
+      right: 336px;
+    }
+      .sidebarWidth6.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 360px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: portrait) {
+      .sidebarWidth6 .sidebarDrawer {
+    width: 384px;
+  }
+    .sidebarWidth6.sidebarPinned .panel {
+      right: 384px;
+    }
+      .sidebarWidth6.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 408px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: landscape) {
+      .sidebarWidth7 .sidebarDrawer {
+    width: 392px;
+  }
+    .sidebarWidth7.sidebarPinned .panel {
+      right: 392px;
+    }
+      .sidebarWidth7.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 416px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: portrait) {
+      .sidebarWidth7 .sidebarDrawer {
+    width: 448px;
+  }
+    .sidebarWidth7.sidebarPinned .panel {
+      right: 448px;
+    }
+      .sidebarWidth7.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 472px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: landscape) {
+      .sidebarWidth8 .sidebarDrawer {
+    width: 448px;
+  }
+    .sidebarWidth8.sidebarPinned .panel {
+      right: 448px;
+    }
+      .sidebarWidth8.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 472px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: portrait) {
+      .sidebarWidth8 .sidebarDrawer {
+    width: 512px;
+  }
+    .sidebarWidth8.sidebarPinned .panel {
+      right: 512px;
+    }
+      .sidebarWidth8.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 536px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: landscape) {
+      .sidebarWidth9 .sidebarDrawer {
+    width: 504px;
+  }
+    .sidebarWidth9.sidebarPinned .panel {
+      right: 504px;
+    }
+      .sidebarWidth9.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 528px;
+      }
+    }
+@media screen and (min-width: 600px) and (orientation: portrait) {
+      .sidebarWidth9 .sidebarDrawer {
+    width: 576px;
+  }
+    .sidebarWidth9.sidebarPinned .panel {
+      right: 576px;
+    }
+      .sidebarWidth9.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 600px;
+      }
+    }
+@media screen and (min-width: 720px) {
+      .sidebarWidth1 .sidebarDrawer {
+    width: 64px;
+  }
+    .sidebarWidth1.sidebarPinned .panel {
+      right: 64px;
+    }
+      .sidebarWidth1.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 88px;
+      }
+    }
+@media screen and (min-width: 720px) {
+      .sidebarWidth2 .sidebarDrawer {
+    width: 128px;
+  }
+    .sidebarWidth2.sidebarPinned .panel {
+      right: 128px;
+    }
+      .sidebarWidth2.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 152px;
+      }
+    }
+@media screen and (min-width: 720px) {
+      .sidebarWidth3 .sidebarDrawer {
+    width: 192px;
+  }
+    .sidebarWidth3.sidebarPinned .panel {
+      right: 192px;
+    }
+      .sidebarWidth3.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 216px;
+      }
+    }
+@media screen and (min-width: 720px) {
+      .sidebarWidth4 .sidebarDrawer {
+    width: 256px;
+  }
+    .sidebarWidth4.sidebarPinned .panel {
+      right: 256px;
+    }
+      .sidebarWidth4.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 280px;
+      }
+    }
+@media screen and (min-width: 720px) {
+      .sidebarWidth5 .sidebarDrawer {
+    width: 320px;
+  }
+    .sidebarWidth5.sidebarPinned .panel {
+      right: 320px;
+    }
+      .sidebarWidth5.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 344px;
+      }
+    }
+@media screen and (min-width: 720px) {
+      .sidebarWidth6 .sidebarDrawer {
+    width: 384px;
+  }
+    .sidebarWidth6.sidebarPinned .panel {
+      right: 384px;
+    }
+      .sidebarWidth6.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 408px;
+      }
+    }
+@media screen and (min-width: 720px) {
+      .sidebarWidth7 .sidebarDrawer {
+    width: 448px;
+  }
+    .sidebarWidth7.sidebarPinned .panel {
+      right: 448px;
+    }
+      .sidebarWidth7.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 472px;
+      }
+    }
+@media screen and (min-width: 720px) {
+      .sidebarWidth8 .sidebarDrawer {
+    width: 512px;
+  }
+    .sidebarWidth8.sidebarPinned .panel {
+      right: 512px;
+    }
+      .sidebarWidth8.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 536px;
+      }
+    }
+@media screen and (min-width: 720px) {
+      .sidebarWidth9 .sidebarDrawer {
+    width: 576px;
+  }
+    .sidebarWidth9.sidebarPinned .panel {
+      right: 576px;
+    }
+      .sidebarWidth9.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 600px;
+      }
+    }
+@media screen and (min-width: 720px) {
+      .sidebarWidth10 .sidebarDrawer {
+    width: 640px;
+  }
+    .sidebarWidth10.sidebarPinned .panel {
+      right: 640px;
+    }
+      .sidebarWidth10.sidebarPinned:not(.sidebarClipped) .appbarAppBar {
+        padding-right: 664px;
+      }
+    }
+.sidebarWidth25 .sidebarDrawer {
+      width: 100%;
+    }
+.sidebarWidth33 .sidebarDrawer {
+      width: 100%;
+    }
+.sidebarWidth50 .sidebarDrawer {
+      width: 100%;
+    }
+.sidebarWidth66 .sidebarDrawer {
+      width: 100%;
+    }
+.sidebarWidth75 .sidebarDrawer {
+      width: 100%;
+    }
+.sidebarWidth100 .sidebarDrawer {
+      width: 100%;
+    }
+@media screen and (min-width: 720px) {
+      .sidebarWidth25 .panel {
+        right: 25%;
+      }
+
+      .sidebarWidth25 .sidebarDrawer {
+        width: 25%;
+      }
+        .sidebarWidth25:not(.sidebarClipped) .appbarAppBar {
+          padding-right: calc(25% + 24px);
+        }
+      .sidebarWidth33 .panel {
+        right: 33%;
+      }
+
+      .sidebarWidth33 .sidebarDrawer {
+        width: 33%;
+      }
+        .sidebarWidth33:not(.sidebarClipped) .appbarAppBar {
+          padding-right: calc(33% + 24px);
+        }
+      .sidebarWidth50 .panel {
+        right: 50%;
+      }
+
+      .sidebarWidth50 .sidebarDrawer {
+        width: 50%;
+      }
+        .sidebarWidth50:not(.sidebarClipped) .appbarAppBar {
+          padding-right: calc(50% + 24px);
+        }
+      .sidebarWidth66 .panel {
+        right: 66%;
+      }
+
+      .sidebarWidth66 .sidebarDrawer {
+        width: 66%;
+      }
+        .sidebarWidth66:not(.sidebarClipped) .appbarAppBar {
+          padding-right: calc(66% + 24px);
+        }
+      .sidebarWidth75 .panel {
+        right: 75%;
+      }
+
+      .sidebarWidth75 .sidebarDrawer {
+        width: 75%;
+      }
+        .sidebarWidth75:not(.sidebarClipped) .appbarAppBar {
+          padding-right: calc(75% + 24px);
+        }
+      .sidebarWidth100 .panel {
+        right: 100%;
+      }
+
+      .sidebarWidth100 .sidebarDrawer {
+        width: 100%;
+      }
+        .sidebarWidth100:not(.sidebarClipped) .appbarAppBar {
+          padding-right: calc(100% + 24px);
+        }
+}

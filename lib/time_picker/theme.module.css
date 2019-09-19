@@ -1,0 +1,223 @@
+.input:not(.disabled) > .inputElement {
+  cursor: pointer;
+}
+.header {
+  background: rgb(63, 81, 181);
+  color: rgb(255, 255, 255);
+  font-size: 52px;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.hours,
+.minutes {
+  cursor: pointer;
+  display: inline-block;
+  opacity: 0.6;
+}
+.separator {
+  margin: 0 5px;
+  opacity: 0.6;
+}
+.ampm {
+  font-size: 16px;
+  height: 44px;
+  line-height: 22px;
+  margin-top: -22px;
+  position: absolute;
+  right: 20px;
+  text-align: center;
+  top: 50%;
+  width: 40px;
+}
+.am,
+.pm {
+  cursor: pointer;
+  display: block;
+  opacity: 0.6;
+}
+.dialog {
+  width: 300px
+}
+.dialog > [role='body'] {
+    overflow-y: visible;
+    padding: 0;
+  }
+.dialog > [role='navigation'] > .button {
+    color: rgb(63, 81, 181)
+  }
+.dialog > [role='navigation'] > .button:hover {
+      background: rgba(63, 81, 181, 0.2);
+    }
+.dialog > [role='navigation'] > .button:focus:not(:active) {
+      background: rgba(63, 81, 181, 0.2);
+    }
+.dialog.hoursDisplay .hours,
+  .dialog.minutesDisplay .minutes,
+  .dialog.amFormat .am,
+  .dialog.pmFormat .pm {
+    opacity: 1;
+  }
+.clock {
+  padding: 15px 20px;
+}
+.placeholder {
+  position: relative;
+  z-index: 100;
+}
+.clockWrapper {
+  background-color: rgb(238, 238, 238);
+  border-radius: 50%;
+  position: absolute;
+  width: 100%;
+}
+.face {
+  border-radius: 50%;
+  cursor: pointer;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  z-index: 100;
+}
+.number {
+  height: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
+  pointer-events: none;
+  position: relative;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 20px
+}
+.number.active {
+    color: rgb(255, 255, 255);
+  }
+.knob {
+  background-color: rgb(63, 81, 181);
+  border-radius: 50%;
+  cursor: pointer;
+  height: 34px;
+  left: 50%;
+  margin-left: -17px;
+  position: absolute;
+  top: -34px;
+  width: 34px;
+}
+.hand {
+  background-color: rgb(63, 81, 181);
+  bottom: 50%;
+  display: block;
+  left: 50%;
+  margin-left: -2px;
+  position: absolute;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  width: 4px
+}
+.hand::before {
+    background-color: rgb(63, 81, 181);
+    border-radius: 50%;
+    bottom: 0;
+    content: '';
+    height: 10px;
+    left: 50%;
+    margin-bottom: -5px;
+    margin-left: -5px;
+    position: absolute;
+    width: 10px;
+  }
+.hand.small > .knob {
+    background-color: rgba(63, 81, 181, 0.2)
+  }
+.hand.small > .knob::after {
+      background: rgb(63, 81, 181);
+      border-radius: 50%;
+      content: '';
+      height: 12px;
+      left: 50%;
+      margin-left: -6px;
+      margin-top: -6px;
+      position: absolute;
+      top: 50%;
+      width: 12px;
+    }
+.hand.small > .knob::before {
+      background: rgb(63, 81, 181);
+      bottom: 0;
+      content: '';
+      height: 22px;
+      left: 50%;
+      margin-left: -2px;
+      position: absolute;
+      width: 4px;
+    }
+.zoomInEnter,
+.zoomInExit {
+  position: absolute;
+}
+.zoomInEnterActive,
+.zoomInExitActive {
+  transition-duration: 500ms;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.zoomInEnter {
+  opacity: 0;
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85)
+}
+.zoomInEnter.zoomInEnterActive {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+.zoomInExit {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1)
+}
+.zoomInExit.zoomInExitActive {
+    opacity: 0;
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
+  }
+.zoomOutEnter,
+.zoomOutExit {
+  position: absolute;
+}
+.zoomOutEnterActive,
+.zoomOutExitActive {
+  transition-duration: 500ms;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.zoomOutEnter {
+  opacity: 0;
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25)
+}
+.zoomOutEnter.zoomOutEnterActive {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+.zoomOutExit {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1)
+}
+.zoomOutExit.zoomOutExitActive {
+    opacity: 0;
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }

@@ -1,0 +1,41 @@
+
+  .horizontal > [data-react-toolbox='button'],
+  .horizontal > [data-react-toolbox='link'] {
+    display: inline-block;
+    margin: 0 5px;
+  }
+.vertical > [data-react-toolbox='button'],
+  .vertical > [data-react-toolbox='link'] {
+    display: block;
+    margin: 5px;
+  }
+.vertical,
+.horizontal {
+  padding: 5px;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%
+}
+.vertical *,
+    .vertical *::after,
+    .vertical *::before,
+    .horizontal *,
+    .horizontal *::after,
+    .horizontal *::before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+    }
+.vertical > [data-react-toolbox='link'], .horizontal > [data-react-toolbox='link'] {
+    color: rgb(0, 0, 0);
+  }
