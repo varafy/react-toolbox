@@ -68,7 +68,7 @@ import AppBar from 'react-toolbox/lib/app_bar/AppBar.js';
 
 ## Customizing components
 
-Every component accepts a `theme` property intended to provide a [CSS Module import object](https://github.com/css-modules/css-modules) that will be used by the component to assign local classnames to its DOM nodes. Therefore, each one implements a documented **classname API** so if you want to customize a component, you just need to provide a theme object with the appropriate classname  mapping.  
+Every component accepts a `theme` property intended to provide a [CSS Module import object](https://github.com/css-modules/css-modules) that will be used by the component to assign local classnames to its DOM nodes. Therefore, each one implements a documented **classname API** so if you want to customize a component, you just need to provide a theme object with the appropriate classname  mapping.
 
 If the component has already a theme injected, the properties you pass will be merged with the injected. In this way, you can **add** classnames to the nodes of a specific component and use them to add or to override styles. For example, if you want to customize the `AppBar` to be purple:
 
@@ -162,7 +162,7 @@ Check for each component what key to use. Then, when you have a theme object ful
 ```js
 import React from 'react';
 import { render } from 'react-dom';
-import { ThemeProvider } from 'react-css-themr';
+import { ThemeProvider } from '@varafy/react-css-themr';
 import theme from './theme/theme.js';
 import App from './App.js';
 

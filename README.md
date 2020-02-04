@@ -1,6 +1,6 @@
 # <a href='http://react-toolbox.io'><img src='http://i.imgur.com/VCSElQX.png' height='50'></a>
 
-[![npm version](https://img.shields.io/npm/v/react-toolbox.svg?style=flat-square)](https://www.npmjs.com/package/react-toolbox) [![Build Status](http://img.shields.io/travis/react-toolbox/react-toolbox/master.svg?style=flat-square)](https://travis-ci.org/react-toolbox/react-toolbox) [![NPM Status](http://img.shields.io/npm/dm/react-toolbox.svg?style=flat-square)](https://www.npmjs.org/package/react-toolbox) [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/javivelasco) [![OpenCollective](https://opencollective.com/react-toolbox/backers/badge.svg)](#backers) 
+[![npm version](https://img.shields.io/npm/v/react-toolbox.svg?style=flat-square)](https://www.npmjs.com/package/react-toolbox) [![Build Status](http://img.shields.io/travis/react-toolbox/react-toolbox/master.svg?style=flat-square)](https://travis-ci.org/react-toolbox/react-toolbox) [![NPM Status](http://img.shields.io/npm/dm/react-toolbox.svg?style=flat-square)](https://www.npmjs.org/package/react-toolbox) [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/javivelasco) [![OpenCollective](https://opencollective.com/react-toolbox/backers/badge.svg)](#backers)
 [![OpenCollective](https://opencollective.com/react-toolbox/sponsors/badge.svg)](#sponsors)
 
 React Toolbox is a set of [React](http://facebook.github.io/react/) components that implement [Google's Material Design specification](https://material.google.com/). It's powered by [CSS Modules](https://github.com/css-modules/css-modules) and harmoniously integrates with your [webpack](http://webpack.github.io/) workflow, although you can use any other module bundler. You can take a tour through our documentation website and try the components live!
@@ -145,7 +145,7 @@ import { AppBar } from 'react-toolbox/lib/app_bar/AppBar.js';
 
 ## Customizing components
 
-Every component accepts a `theme` property intended to provide a [CSS Module import object](https://github.com/css-modules/css-modules) that will be used by the component to assign local classnames to its DOM nodes. Therefore, each one implements a documented **classname API**. So if you want to customize a component, you just need to provide a theme object with the appropriate classname mapping.  
+Every component accepts a `theme` property intended to provide a [CSS Module import object](https://github.com/css-modules/css-modules) that will be used by the component to assign local classnames to its DOM nodes. Therefore, each one implements a documented **classname API**. So if you want to customize a component, you just need to provide a theme object with the appropriate classname mapping.
 
 If the component already has a theme injected, the properties you pass will be merged with the injected theme. In this way, you can **add** classnames to the nodes of a specific component and use them to add or to override styles. For example, if you want to customize the `AppBar` to be purple:
 
@@ -203,7 +203,7 @@ Wrap your component tree with ThemeProvider at the desired level in your compone
 
 ```js
 import React from 'react';
-import { ThemeProvider } from 'react-css-themr';
+import { ThemeProvider } from '@varafy/react-css-themr';
 import theme from './theme';
 
 class App extends React.Component {
@@ -230,7 +230,7 @@ You can override both the global and component-specific CSS Custom Properties at
 
 ```js
 // This can also be stored in a separate file:
-const reactToolboxVariables = { 
+const reactToolboxVariables = {
   'color-text': '#444548',
   /* Note that you can use global colors and variables */
   'color-primary': 'var(--palette-blue-500)',
