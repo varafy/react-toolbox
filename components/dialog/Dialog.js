@@ -76,7 +76,7 @@ const factory = (Overlay, Button) => {
       title: PropTypes.string,
       wrapper: PropTypes.string,
     }),
-    title: PropTypes.string,
+    title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     type: PropTypes.string,
   };
 
