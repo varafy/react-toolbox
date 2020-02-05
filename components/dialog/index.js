@@ -1,4 +1,4 @@
-import { themr } from '@varafy/react-css-themr';
+import { themr } from 'react-css-themr';
 import { DIALOG } from '../identifiers';
 import { dialogFactory } from './Dialog';
 import { Overlay } from '../overlay';

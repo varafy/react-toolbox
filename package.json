@@ -1,5 +1,5 @@
 {
-  "name": "@varafy/react-toolbox",
+  "name": "react-toolbox-varafy",
   "description": "A set of React components implementing Google's Material Design specification with the power of CSS Modules.",
   "homepage": "http://react-toolbox.io/",
   "license": "MIT",
@@ -52,9 +52,9 @@
   "dependencies": {
     "@babel/runtime": "^7.1.2",
     "@types/prop-types": "^15.5.6",
-    "@varafy/react-css-themr": "github:varafy/react-css-themr#varafy",
     "classnames": "^2.2.6",
     "core-js": "^2.5.7",
+    "react-css-themr": "^2.1.2",
     "react-style-proptype": "^3.2.2",
     "react-transition-group": "^2.5.0"
   },

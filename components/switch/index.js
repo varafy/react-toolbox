@@ -1,4 +1,4 @@
-import { themr } from '@varafy/react-css-themr';
+import { themr } from 'react-css-themr';
 import { switchFactory } from './Switch';
 import { SWITCH } from '../identifiers';
 import thumbFactory from './Thumb';

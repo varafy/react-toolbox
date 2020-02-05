@@ -2,7 +2,6 @@
 import '@csstools/normalize.css';
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
-import { ThemeProvider } from '@varafy/react-css-themr';
 
 import { Layout, Panel, NavDrawer } from '../components/layout';
 import AppBar from '../components/app_bar';
@@ -32,13 +31,6 @@ import Table from './components/table';
 import Tabs from './components/tabs';
 import Tooltip from './components/tooltip';
 import style from './style.module.css';
-import { BUTTON } from '../components/identifiers';
-
-const customTheme = {
-  [BUTTON]: {
-    button: style.customButton
-  },
-};
 
 class Root extends Component {
   state = { pinned: false };
@@ -49,63 +41,61 @@ class Root extends Component {
 
   render() {
     return (
-      <ThemeProvider theme={customTheme}>
-        <Layout>
-          <AppBar
-            title={`React Toolbox Spec ${VERSION}`}
-            onLeftIconClick={this.handleSideBarToggle}
-            className={style.appbar}
-            leftIcon="menu"
-            fixed
-            flat
-          >
-            <ButtonToolbox
-              className={style.github}
-              href="http://react-toolbox.io/#/"
-              target="_blank"
-              icon="web"
-              floating
-              accent
-            />
-          </AppBar>
+      <Layout>
+        <AppBar
+          title={`React Toolbox Spec ${VERSION}`}
+          onLeftIconClick={this.handleSideBarToggle}
+          className={style.appbar}
+          leftIcon="menu"
+          fixed
+          flat
+        >
+          <ButtonToolbox
+            className={style.github}
+            href="http://react-toolbox.io/#/"
+            target="_blank"
+            icon="web"
+            floating
+            accent
+          />
+        </AppBar>
 
-          <NavDrawer
-            active={this.state.pinned}
-            onEscKeyDown={this.handleSideBarToggle}
-            onOverlayClick={this.handleSideBarToggle}
-            permanentAt="lg"
-          >
-            This will content filter and indexes for examples
-          </NavDrawer>
+        <NavDrawer
+          active={this.state.pinned}
+          onEscKeyDown={this.handleSideBarToggle}
+          onOverlayClick={this.handleSideBarToggle}
+          permanentAt="lg"
+        >
+          This will content filter and indexes for examples
+        </NavDrawer>
 
-          <Panel className={style.app}>
-            <Autocomplete />
-            <AppBarTest />
-            <Avatar />
-            <FontIcon />
-            <Button />
-            <Card />
-            <Checkbox />
-            <Chip />
-            <Dialog />
-            <Drawer />
-            <Dropdown />
-            <IconMenu />
-            <InputTest />
-            <List />
-            <Menu />
-            <Pickers />
-            <Progress />
-            <Radio />
-            <Slider />
-            <Snackbar />
-            <Switch />
-            <Table />
-            <Tabs />
-            <Tooltip />
-          </Panel>
-        </Layout>
-      </ThemeProvider>
+        <Panel className={style.app}>
+          <Autocomplete />
+          <AppBarTest />
+          <Avatar />
+          <FontIcon />
+          <Button />
+          <Card />
+          <Checkbox />
+          <Chip />
+          <Dialog />
+          <Drawer />
+          <Dropdown />
+          <IconMenu />
+          <InputTest />
+          <List />
+          <Menu />
+          <Pickers />
+          <Progress />
+          <Radio />
+          <Slider />
+          <Snackbar />
+          <Switch />
+          <Table />
+          <Tabs />
+          <Tooltip />
+        </Panel>
+      </Layout>
     );
   }
 }

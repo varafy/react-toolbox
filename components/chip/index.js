@@ -1,4 +1,4 @@
-import { themr } from '@varafy/react-css-themr';
+import { themr } from 'react-css-themr';
 import { CHIP } from '../identifiers';
 import { chipFactory } from './Chip';
 import { Avatar } from '../avatar';

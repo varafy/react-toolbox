@@ -1,4 +1,4 @@
-import { themr } from '@varafy/react-css-themr';
+import { themr } from 'react-css-themr';
 import { RADIO } from '../identifiers';
 import themedRippleFactory from '../ripple';
 import radioFactory from './Radio';
