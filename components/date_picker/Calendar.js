@@ -41,7 +41,7 @@ const factory = (IconButton) => {
       viewDate: this.props.selectedDate,
     };
 
-    UNSAFE_componentWillMount() {
+    componentWillMount() {
       document.body.addEventListener('keydown', this.handleKeys);
     }
 

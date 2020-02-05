@@ -62,11 +62,11 @@ const factory = (Dialog, Calendar) => {
       onClick: this.handleSelect,
     }];
 
-    UNSAFE_componentWillMount() {
+    componentWillMount() {
       this.updateStateDate(this.props.value);
     }
 
-    UNSAFE_componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps(nextProps) {
       this.updateStateDate(nextProps.value);
     }
 
