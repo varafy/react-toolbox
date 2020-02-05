@@ -11,11 +11,9 @@ import InjectOverlay from '../overlay/Overlay';
 
 const factory = (Overlay, Button) => {
   const Dialog = (props) => {
-    const ButtonComponent = props.ButtonComponent || Button;
-
     const actions = props.actions.map((action, idx) => {
       const className = classnames(props.theme.button, { [action.className]: action.className });
-      return <ButtonComponent key={idx} {...action} className={className} />; // eslint-disable-line
+      return <Button key={idx} {...action} className={className} />; // eslint-disable-line
     });
 
     const className = classnames([props.theme.dialog, props.theme[props.type]], {
@@ -60,7 +58,6 @@ const factory = (Overlay, Button) => {
       label: PropTypes.string,
     })),
     active: PropTypes.bool,
-    ButtonComponent: PropTypes.func,
     children: PropTypes.node,
     className: PropTypes.string,
     onEscKeyDown: PropTypes.func,
