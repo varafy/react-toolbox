@@ -109,14 +109,14 @@ class Portal extends Component {
       <div className={this.props.className} style={this.props.style}>
         {this.props.children}
       </div>,
-      document.body,
+      getContainer(this.props.container),
     );
   }
 }
 
-// function getContainer(container) {
-//   const _container = typeof container === 'function' ? container() : container;
-//   return ReactDOM.findDOMNode(_container) || document.body;
-// }
+function getContainer(container) {
+  const _container = typeof container === 'function' ? container() : container;
+  return ReactDOM.findDOMNode(_container) || document.body;
+}
 
 export default Portal;

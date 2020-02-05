@@ -18,7 +18,6 @@ module.exports = {
     'react'
   ],
   rules: {
-    'linebreak-style': 'off',
     'compat/compat': 'error',
     'func-names': 'off',
     'global-require': 'off',
