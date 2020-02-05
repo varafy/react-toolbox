@@ -14,11 +14,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/varafy/react-toolbox.git"
+    "url": "git+https://github.com/react-toolbox/react-toolbox.git"
   },
   "bugs": {
     "email": "issues@react-toolbox.io",
-    "url": "https://github.com/varafy/react-toolbox/issues"
+    "url": "https://github.com/react-toolbox/react-toolbox/issues"
   },
   "keywords": [
     "components",
