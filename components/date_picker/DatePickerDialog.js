@@ -116,6 +116,7 @@ const factory = (Dialog, Calendar) => {
           onEscKeyDown={this.props.onEscKeyDown}
           onOverlayClick={this.props.onOverlayClick}
           type="custom"
+          theme={(theme && theme.dialogTheme) || {}}
         >
           <header className={headerClassName}>
             <span id="years" className={theme.year} onClick={this.handleSwitchDisplay}>
