@@ -56,7 +56,7 @@ const factory = (Dialog) => {
       label: this.props.okLabel,
       className: this.props.theme.button,
       name: this.props.name,
-      onClick: this.handleSelect,
+      onClick: (e) => this.handleSelect(e),
     }];
 
     UNSAFE_componentWillReceiveProps(nextProps) {
@@ -67,7 +67,7 @@ const factory = (Dialog) => {
 
     updateRefAndCalculateHandleShape = (node) => {
       this.clockNode = node;
-      if (this.props.active) {
+      if (this.props.active && this.clockNode) {
         this.clockNode.handleCalculateShape();
       }
     }
