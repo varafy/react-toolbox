@@ -241,7 +241,7 @@ const factory = (ProgressBar, Input) => {
     trimValue(value) {
       if (value < this.props.min) return this.props.min;
       if (value > this.props.max) return this.props.max;
-      return round(value, this.stepDecimals());
+      return round(Number(value), this.stepDecimals());
     }
 
     valueForInput(value) {
